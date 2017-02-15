@@ -14,6 +14,11 @@
 		8683C4A11E52F3C20041FE0E /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8683C4A01E52F3C20041FE0E /* Live.storyboard */; };
 		8683C4A31E52F3DD0041FE0E /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8683C4A21E52F3DD0041FE0E /* Follow.storyboard */; };
 		8683C4A51E52F3F30041FE0E /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8683C4A41E52F3F30041FE0E /* Profile.storyboard */; };
+		8683C4A71E52F5060041FE0E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683C4A61E52F5060041FE0E /* MainViewController.swift */; };
+		8683C4B81E52F8710041FE0E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683C4B71E52F8710041FE0E /* HomeViewController.swift */; };
+		8683C4BB1E52FED50041FE0E /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683C4BA1E52FED50041FE0E /* UIBarButtonItem-Extension.swift */; };
+		8683C4BE1E54046F0041FE0E /* YYTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683C4BD1E54046F0041FE0E /* YYTitleView.swift */; };
+		8683C4C21E5408B60041FE0E /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683C4C11E5408B60041FE0E /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		8683C4A01E52F3C20041FE0E /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		8683C4A21E52F3DD0041FE0E /* Follow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
 		8683C4A41E52F3F30041FE0E /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		8683C4A61E52F5060041FE0E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8683C4B71E52F8710041FE0E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8683C4BA1E52FED50041FE0E /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		8683C4BD1E54046F0041FE0E /* YYTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYTitleView.swift; sourceTree = "<group>"; };
+		8683C4C11E5408B60041FE0E /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,9 @@
 			isa = PBXGroup;
 			children = (
 				8683C4A21E52F3DD0041FE0E /* Follow.storyboard */,
+				8683C4B11E52F8570041FE0E /* Controller */,
+				8683C4B21E52F8570041FE0E /* Model */,
+				8683C4B31E52F8570041FE0E /* View */,
 			);
 			path = Follow;
 			sourceTree = "<group>";
@@ -92,6 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				8683C49E1E52F3A10041FE0E /* Home.storyboard */,
+				8683C4AB1E52F8450041FE0E /* Controller */,
+				8683C4AC1E52F8450041FE0E /* Model */,
+				8683C4AD1E52F8450041FE0E /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -100,6 +116,9 @@
 			isa = PBXGroup;
 			children = (
 				8683C4A01E52F3C20041FE0E /* Live.storyboard */,
+				8683C4AE1E52F84E0041FE0E /* Controller */,
+				8683C4AF1E52F84E0041FE0E /* Model */,
+				8683C4B01E52F84E0041FE0E /* View */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -107,6 +126,10 @@
 		8683C4991E52ED120041FE0E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8683C4A61E52F5060041FE0E /* MainViewController.swift */,
+				8683C4A81E52F8340041FE0E /* Controller */,
+				8683C4A91E52F8340041FE0E /* Model */,
+				8683C4AA1E52F8340041FE0E /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -115,6 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				8683C4A41E52F3F30041FE0E /* Profile.storyboard */,
+				8683C4B41E52F8600041FE0E /* Controller */,
+				8683C4B51E52F8600041FE0E /* Model */,
+				8683C4B61E52F8600041FE0E /* View */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -122,8 +148,133 @@
 		8683C49B1E52ED120041FE0E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				8683C4C11E5408B60041FE0E /* Common.swift */,
+				8683C4BC1E54043B0041FE0E /* UIView */,
+				8683C4B91E52FEB90041FE0E /* Extension */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		8683C4A81E52F8340041FE0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8683C4A91E52F8340041FE0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8683C4AA1E52F8340041FE0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8683C4AB1E52F8450041FE0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8683C4B71E52F8710041FE0E /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8683C4AC1E52F8450041FE0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8683C4AD1E52F8450041FE0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8683C4AE1E52F84E0041FE0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8683C4AF1E52F84E0041FE0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8683C4B01E52F84E0041FE0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8683C4B11E52F8570041FE0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8683C4B21E52F8570041FE0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8683C4B31E52F8570041FE0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8683C4B41E52F8600041FE0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8683C4B51E52F8600041FE0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8683C4B61E52F8600041FE0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8683C4B91E52FEB90041FE0E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8683C4BA1E52FED50041FE0E /* UIBarButtonItem-Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		8683C4BC1E54043B0041FE0E /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				8683C4BD1E54046F0041FE0E /* YYTitleView.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +353,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8683C4841E52EBB60041FE0E /* AppDelegate.swift in Sources */,
+				8683C4A71E52F5060041FE0E /* MainViewController.swift in Sources */,
+				8683C4BB1E52FED50041FE0E /* UIBarButtonItem-Extension.swift in Sources */,
+				8683C4B81E52F8710041FE0E /* HomeViewController.swift in Sources */,
+				8683C4C21E5408B60041FE0E /* Common.swift in Sources */,
+				8683C4BE1E54046F0041FE0E /* YYTitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +517,7 @@
 				8683C4941E52EBB60041FE0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
