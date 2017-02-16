@@ -8,16 +8,28 @@
 
 import UIKit
 
-fileprivate let TitleViewH: CGFloat = 35
+fileprivate let TitleViewH: CGFloat = 40
 
 class HomeViewController: UIViewController {
 
-    fileprivate lazy var titleView: YYTitleView = {
-    
+    fileprivate lazy var titleView: YYTitleView = {[weak self] in
         let frame = CGRect(x: 0, y: kNavigationH, width: kScreenW, height: TitleViewH)
-        let titleView = YYTitleView(frame: frame, titles: ["推荐","手游","娱乐","游戏","趣玩"])
-        titleView.backgroundColor = UIColor.brown
+        let titleView = YYTitleView(frame: frame, titles: ["推荐","手游","娱乐","游戏"])
+        titleView.delegate = self
         return titleView
+    }()
+    
+    fileprivate lazy var contentView: YYContentView = {[weak self] in
+        
+        let frame = CGRect(x: 0, y:  kNavigationH + TitleViewH, width: kScreenW, height: kScreenH - kNavigationH - TitleViewH - kTabBarH)
+        var subVcs = [UIViewController]()
+        for _ in 0..<4 {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor.randomColor()
+            subVcs.append(vc)
+        }
+        let contentView = YYContentView(frame: frame, subVcs: subVcs, parentVc: self)
+        return contentView
     }()
     
     override func viewDidLoad() {
@@ -25,9 +37,6 @@ class HomeViewController: UIViewController {
 
         setupUI()
     }
-
- 
-    
 
 }
 
@@ -44,6 +53,10 @@ extension HomeViewController {
         
         // 2.添加titleView
         view.addSubview(titleView)
+//        titleView.delegate = self
+        
+        // 3.
+        view.addSubview(contentView)
     }
     
     
@@ -61,3 +74,14 @@ extension HomeViewController {
         
     }
 }
+
+
+
+extension HomeViewController : YYTitleViewDelegate {
+
+    func YYTitleViewScrollToIndex(index: Int) {
+        contentView.scrollToIndex(index: index)
+    }
+    
+}
+
