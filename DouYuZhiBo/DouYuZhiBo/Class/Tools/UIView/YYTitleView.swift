@@ -10,12 +10,16 @@ import UIKit
 
 protocol YYTitleViewDelegate : NSObjectProtocol {
     
-    func YYTitleViewScrollToIndex(index: Int)
+    func yyTitleViewScrollToIndex(index: Int)
     
 }
 
 // 滑动底线的高度
 fileprivate let kScrollLineViewH: CGFloat = 3
+// 普通状态的颜色
+fileprivate let kNomalColor: (CGFloat, CGFloat ,CGFloat) = (85, 85, 85)
+// 被选中的颜色
+fileprivate let kSelectedColor: (CGFloat, CGFloat ,CGFloat) = (255, 128, 0)
 
 class YYTitleView: UIView {
 
@@ -93,9 +97,9 @@ extension YYTitleView {
             lab.font = UIFont.systemFont(ofSize: 16.0)
             lab.tag = index
             if index == 0 {
-                lab.textColor = UIColor.orange
+                lab.textColor = UIColor(r: kSelectedColor.0, g: kSelectedColor.1, b: kSelectedColor.2)
             }else {
-                lab.textColor = UIColor.darkGray
+                lab.textColor = UIColor(r: kNomalColor.0, g: kNomalColor.1, b: kNomalColor.2)
             }
             scrollView.addSubview(lab)
             labelArr.append(lab)
@@ -108,16 +112,16 @@ extension YYTitleView {
     }
 }
 
-
+// MARK: -title点击事件
 extension YYTitleView {
 
     @objc fileprivate func titleLabelClick(tap: UITapGestureRecognizer) {
         
         // 1.设置文字颜色
         let originalLab = labelArr[originalIndex]
-        originalLab.textColor = UIColor.darkGray
+        originalLab.textColor = UIColor(r: kNomalColor.0, g: kNomalColor.1, b: kNomalColor.2)
         let currentLab = tap.view as? UILabel
-        currentLab?.textColor = UIColor.orange
+        currentLab?.textColor = UIColor(r: kSelectedColor.0, g: kSelectedColor.1, b: kSelectedColor.2)
         
         // 2.取出当前是第几个
         if let currentIndex = currentLab?.tag,
@@ -131,8 +135,38 @@ extension YYTitleView {
             })
             
             // 4.通知代理点击了第几个
-            delegate?.YYTitleViewScrollToIndex(index: currentIndex)
+            delegate?.yyTitleViewScrollToIndex(index: currentIndex)
         }
+    }
+}
+
+// MARK: -设置滑动效果
+extension YYTitleView {
+
+    func setTitleView(progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+    
+        // 1.取出label
+        let sourceLab = labelArr[sourceIndex]
+        let targetLab = labelArr[targetIndex]
+        
+        // 2.处理滑块
+        let moveTotalX = targetLab.frame.origin.x - sourceLab.frame.origin.x
+        let moveX = moveTotalX * progress
+        lineView.frame.origin.x = sourceLab.frame.origin.x + moveX
+        
+        // 3.处理字体颜色
+        let colorDelta = (kSelectedColor.0 - kNomalColor.0, kSelectedColor.1 - kNomalColor.1, kSelectedColor.2 - kNomalColor.2)
+        
+        //print(colorDelta)
+        
+        sourceLab.textColor = UIColor(r: kSelectedColor.0 - colorDelta.0 * progress,
+                                      g: kSelectedColor.1 - colorDelta.1 * progress,
+                                      b: kSelectedColor.1 - colorDelta.1 * progress)
+        targetLab.textColor = UIColor(r: kNomalColor.0 + colorDelta.0 * progress,
+                                      g: kNomalColor.1 + colorDelta.1 * progress,
+                                      b: kNomalColor.2 + colorDelta.2 * progress)
+        
+        originalIndex = targetIndex
     }
 }
 

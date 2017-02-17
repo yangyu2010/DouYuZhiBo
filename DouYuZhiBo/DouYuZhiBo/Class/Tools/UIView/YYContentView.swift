@@ -10,8 +10,19 @@ import UIKit
 
 fileprivate let ContentCollectionViewCellID = "ContentCollectionViewCellID"
 
+protocol YYContentViewDelegate : class {
+    func yyContentViewScroll(progress: CGFloat, sourceIndex: Int, targetIndex: Int)
+}
+
 class YYContentView: UIView {
 
+    // MARK: -自定义属性
+    fileprivate var subVcs: [UIViewController] = [UIViewController]()
+    fileprivate var parentVc : UIViewController?
+    fileprivate var startOffsetX: CGFloat = 0
+    weak var delegate: YYContentViewDelegate?
+    fileprivate var isForbidScrollDelegate: Bool = false    //如果是点击tileView 这个时候不需要去走滑动的代理
+    
     // MARK: -懒加载属性
     fileprivate lazy var collectionView: UICollectionView = {[weak self] in
         let layout = UICollectionViewFlowLayout()
@@ -24,13 +35,11 @@ class YYContentView: UIView {
         collection.showsHorizontalScrollIndicator = false
         collection.bounces = false
         collection.isPagingEnabled = true
+        collection.dataSource = self
+        collection.delegate = self
         collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ContentCollectionViewCellID)
         return collection
     }()
-    
-    // MARK: -自定义属性
-    fileprivate var subVcs: [UIViewController] = [UIViewController]()
-    fileprivate var parentVc : UIViewController?
     
     init(frame: CGRect, subVcs: [UIViewController], parentVc: UIViewController?) {
         
@@ -55,13 +64,12 @@ extension YYContentView {
         
         collectionView.frame = self.bounds
         addSubview(collectionView)
-        collectionView.dataSource = self
         
     }
 }
 
 // MARK: -collection代理
-extension YYContentView : UICollectionViewDataSource {
+extension YYContentView : UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return subVcs.count
@@ -78,6 +86,57 @@ extension YYContentView : UICollectionViewDataSource {
         
         return cell
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startOffsetX = scrollView.contentOffset.x
+//        print("scrollViewWillBeginDragging")
+//        print(originalOffsetX)
+//        print("scrollViewWillBeginDragging")
+        
+        isForbidScrollDelegate = false
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //print(scrollView.contentOffset.x)
+        
+        // 如果是点击事件,就不走下面的代理了
+        if isForbidScrollDelegate { return }
+        
+        var progress: CGFloat = 0
+        var sourceIndex: Int = 0
+        var targetIndex: Int = 0
+        
+        let currentOffset = scrollView.contentOffset.x
+        let scrollViewW = scrollView.bounds.width
+        
+        if currentOffset < startOffsetX { //变小了 是往右边滑动 title变小一个
+            
+            progress = 1 - (currentOffset / scrollViewW - floor(currentOffset / scrollViewW))
+            targetIndex = Int(currentOffset / scrollViewW)
+            sourceIndex = targetIndex + 1
+
+        }else { //大了 就是往左边滑动 title变大一个
+            progress = currentOffset / scrollViewW - floor(currentOffset / scrollViewW)
+            sourceIndex = Int(currentOffset / scrollViewW)
+            targetIndex = sourceIndex + 1
+            if targetIndex >= subVcs.count {
+                targetIndex = subVcs.count - 1
+            }
+            
+            //如果完全滑过去了 就处理值
+            if currentOffset - startOffsetX == scrollViewW {
+                progress = 1
+                targetIndex = sourceIndex
+            }
+
+        }
+
+        
+//        print("\(progress) \(sourceIndex) \(targetIndex)")
+
+        delegate?.yyContentViewScroll(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+        
+    }
 }
 
 
@@ -85,8 +144,9 @@ extension YYContentView : UICollectionViewDataSource {
 extension YYContentView {
 
     func scrollToIndex(index: Int) {
-//        let path = IndexPath(item: index, section: 0)
-//        collectionView.scrollToItem(at: path, at: .left, animated: false)
+        
+        // 这个是点击事件,然后不需要走滑动代理
+        isForbidScrollDelegate = true
         
         let offsetX = CGFloat(index) * collectionView.frame.width
         collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: false)

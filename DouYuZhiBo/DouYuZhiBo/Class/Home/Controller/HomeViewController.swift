@@ -23,12 +23,15 @@ class HomeViewController: UIViewController {
         
         let frame = CGRect(x: 0, y:  kNavigationH + TitleViewH, width: kScreenW, height: kScreenH - kNavigationH - TitleViewH - kTabBarH)
         var subVcs = [UIViewController]()
-        for _ in 0..<4 {
+        let firstVC = RecommendViewController()
+        subVcs.append(firstVC)
+        for _ in 0..<3 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.randomColor()
             subVcs.append(vc)
         }
         let contentView = YYContentView(frame: frame, subVcs: subVcs, parentVc: self)
+        contentView.delegate = self
         return contentView
     }()
     
@@ -53,10 +56,10 @@ extension HomeViewController {
         
         // 2.添加titleView
         view.addSubview(titleView)
-//        titleView.delegate = self
         
         // 3.
         view.addSubview(contentView)
+//        contentView.delegate = self
     }
     
     
@@ -76,12 +79,20 @@ extension HomeViewController {
 }
 
 
-
+// MARK: -titleView代理
 extension HomeViewController : YYTitleViewDelegate {
 
-    func YYTitleViewScrollToIndex(index: Int) {
+    func yyTitleViewScrollToIndex(index: Int) {
         contentView.scrollToIndex(index: index)
     }
     
 }
 
+
+// MARK: -contentView代理
+extension HomeViewController : YYContentViewDelegate {
+
+    func yyContentViewScroll(progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        titleView.setTitleView(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+}
