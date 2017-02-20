@@ -117,10 +117,13 @@ extension YYTitleView {
 
     @objc fileprivate func titleLabelClick(tap: UITapGestureRecognizer) {
         
+        let currentLab = tap.view as? UILabel
+        
+        if currentLab?.tag == originalIndex { return }
+        
         // 1.设置文字颜色
         let originalLab = labelArr[originalIndex]
         originalLab.textColor = UIColor(r: kNomalColor.0, g: kNomalColor.1, b: kNomalColor.2)
-        let currentLab = tap.view as? UILabel
         currentLab?.textColor = UIColor(r: kSelectedColor.0, g: kSelectedColor.1, b: kSelectedColor.2)
         
         // 2.取出当前是第几个

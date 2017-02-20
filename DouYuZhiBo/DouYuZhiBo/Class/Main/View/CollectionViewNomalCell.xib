@@ -75,6 +75,12 @@
                 <constraint firstItem="fuk-Cp-qcF" firstAttribute="trailing" secondItem="XE8-T0-ON4" secondAttribute="trailing" constant="-5" id="yzj-pz-T2a"/>
             </constraints>
             <size key="customSize" width="299" height="139"/>
+            <connections>
+                <outlet property="iconImg" destination="XE8-T0-ON4" id="XJU-KU-apk"/>
+                <outlet property="nickNameLab" destination="eGw-vm-ntW" id="8y9-If-j5P"/>
+                <outlet property="onlineBtn" destination="fuk-Cp-qcF" id="Sgj-2A-CCX"/>
+                <outlet property="titLab" destination="bgd-Jl-JEk" id="a5n-P4-c1a"/>
+            </connections>
             <point key="canvasLocation" x="38.5" y="-64.5"/>
         </collectionViewCell>
     </objects>

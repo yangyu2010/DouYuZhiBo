@@ -10,9 +10,18 @@ import UIKit
 
 class CollectionViewPrettyCell: UICollectionViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var cityBtn: UIButton!
+    @IBOutlet weak var nickNameLab: UILabel!
+    @IBOutlet weak var iconImg: UIImageView!
+    @IBOutlet weak var onlineBtn: UIButton!
+    
+    
+    var room : RoomModel? {
+        didSet {
+            guard let room = room else { return  }
+            
+            nickNameLab.text = room.nickname
+            
+        }
     }
-
 }
