@@ -21,6 +21,8 @@ class RoomListModel: NSObject {
     var tag_name : String?
     /// id
     var tag_id : Int = 0
+    /// 本地group图片
+    var local_icon : String = "home_header_normal"
     
     override init() {
         

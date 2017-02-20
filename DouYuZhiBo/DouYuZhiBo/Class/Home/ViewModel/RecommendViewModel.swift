@@ -31,6 +31,13 @@ extension RecommendViewModel {
                                            "offset" : "0",
                                            "time" : NSDate.getCurrentTime()]
         
+        // 2.设置自定义的两个group属性
+        prettyRoomList.tag_name = "颜值"
+        prettyRoomList.local_icon = "home_header_phone"
+        
+        hotRoomList.tag_name = "热门"
+        hotRoomList.local_icon = "home_header_hot"
+        
         let group = DispatchGroup()
         group.enter()
         // 热门的

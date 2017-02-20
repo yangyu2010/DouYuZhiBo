@@ -8,5 +8,6 @@ use_frameworks!
   # Pods for DouYuZhiBo
 
     pod 'Alamofire'
+    pod 'Kingfisher'
 
 end

@@ -25,6 +25,8 @@ class RoomModel: NSObject {
     /// 房间id
     var room_id : Int = 0
     
+    /// 主播的城市
+    var anchor_city : String?
     
     init(dict : [String : Any]) {
         

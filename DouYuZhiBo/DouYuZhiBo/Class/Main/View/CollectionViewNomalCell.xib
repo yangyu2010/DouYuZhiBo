@@ -41,19 +41,21 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="斗鱼直播ing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGw-vm-ntW">
-                        <rect key="frame" x="5" y="91" width="61" height="14"/>
+                        <rect key="frame" x="5" y="91" width="219" height="14"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuk-Cp-qcF">
-                        <rect key="frame" x="214" y="83" width="80" height="22"/>
+                        <rect key="frame" x="224" y="83" width="70" height="22"/>
+                        <color key="backgroundColor" red="1" green="0.23684462149999999" blue="0.43733646609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="JGK-ZW-otJ"/>
-                            <constraint firstAttribute="width" constant="80" id="cFI-I4-2Hj"/>
+                            <constraint firstAttribute="width" constant="70" id="cFI-I4-2Hj"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="6.6万人在线" image="Image_online"/>
+                        <state key="normal" title="6.6万在线" image="Image_online"/>
                     </button>
                 </subviews>
             </view>
@@ -62,7 +64,7 @@
                 <constraint firstAttribute="trailing" secondItem="bgd-Jl-JEk" secondAttribute="trailing" constant="5" id="3e9-3w-XJ0"/>
                 <constraint firstItem="eGw-vm-ntW" firstAttribute="bottom" secondItem="XE8-T0-ON4" secondAttribute="bottom" constant="-5" id="7DY-ML-Y9m"/>
                 <constraint firstItem="eGw-vm-ntW" firstAttribute="leading" secondItem="XE8-T0-ON4" secondAttribute="leading" constant="5" id="7wB-0A-gIG"/>
-                <constraint firstItem="fuk-Cp-qcF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eGw-vm-ntW" secondAttribute="trailing" constant="5" id="Bpb-8I-E5Y"/>
+                <constraint firstItem="fuk-Cp-qcF" firstAttribute="leading" secondItem="eGw-vm-ntW" secondAttribute="trailing" id="Bpb-8I-E5Y"/>
                 <constraint firstItem="XE8-T0-ON4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Fgz-wf-1mw"/>
                 <constraint firstAttribute="bottom" secondItem="gj4-6g-bUX" secondAttribute="bottom" constant="10" id="HRy-Wm-JPi"/>
                 <constraint firstAttribute="trailing" secondItem="XE8-T0-ON4" secondAttribute="trailing" id="RPW-dB-sw0"/>

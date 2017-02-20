@@ -34,7 +34,7 @@ class RecommendViewController: UIViewController {
         
         let frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - kNavigationH - 40 - kTabBarH)
         let collec = UICollectionView(frame: frame, collectionViewLayout: layout)
-        collec.showsVerticalScrollIndicator = false
+//        collec.showsVerticalScrollIndicator = false
         collec.register(UINib(nibName: "CollectionViewNomalCell", bundle: nil), forCellWithReuseIdentifier: kRecommendNormalCellID)
         collec.register(UINib(nibName: "CollectionViewPrettyCell", bundle: nil), forCellWithReuseIdentifier: kRecommendPrettyCellID)
         collec.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kRecommendHeaderView)
@@ -73,8 +73,7 @@ extension RecommendViewController {
                 
         viewModel.loadData { 
             
-            print(self.viewModel.room_list)
-            
+            self.recommendCollec.reloadData()
         }
     }
 }
@@ -115,7 +114,8 @@ extension RecommendViewController : UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kRecommendHeaderView, for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kRecommendHeaderView, for: indexPath) as! CollectionHeaderView
+        headerView.roomList = viewModel.room_list[indexPath.section]
         return headerView
     }
     

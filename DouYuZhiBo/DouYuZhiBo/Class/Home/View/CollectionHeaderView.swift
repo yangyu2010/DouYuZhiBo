@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CollectionHeaderView: UICollectionReusableView {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var iconImg: UIImageView!
+    @IBOutlet weak var titLab: UILabel!
+    
+    var roomList : RoomListModel? {
+        didSet {
+
+            guard let roomList = roomList else { return }
+            
+            titLab.text = roomList.tag_name
+            
+            iconImg.image = UIImage(named: roomList.local_icon)
+            
+        }
     }
     
 }
