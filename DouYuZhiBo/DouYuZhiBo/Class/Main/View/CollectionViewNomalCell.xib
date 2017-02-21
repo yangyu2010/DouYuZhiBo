@@ -41,22 +41,24 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="斗鱼直播ing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGw-vm-ntW">
-                        <rect key="frame" x="5" y="91" width="219" height="14"/>
-                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="5" y="91" width="222" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fuk-Cp-qcF">
-                        <rect key="frame" x="224" y="83" width="70" height="22"/>
-                        <color key="backgroundColor" red="1" green="0.23684462149999999" blue="0.43733646609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_online" translatesAutoresizingMaskIntoConstraints="NO" id="h4w-jK-Rp8">
+                        <rect key="frame" x="237" y="90" width="16" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="22" id="JGK-ZW-otJ"/>
-                            <constraint firstAttribute="width" constant="70" id="cFI-I4-2Hj"/>
+                            <constraint firstAttribute="width" constant="16" id="cYc-gg-meH"/>
+                            <constraint firstAttribute="height" constant="16" id="xNs-Kr-o8e"/>
                         </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="3万在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zof-1t-5SA">
+                        <rect key="frame" x="253" y="91" width="41" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="6.6万在线" image="Image_online"/>
-                    </button>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,23 +66,25 @@
                 <constraint firstAttribute="trailing" secondItem="bgd-Jl-JEk" secondAttribute="trailing" constant="5" id="3e9-3w-XJ0"/>
                 <constraint firstItem="eGw-vm-ntW" firstAttribute="bottom" secondItem="XE8-T0-ON4" secondAttribute="bottom" constant="-5" id="7DY-ML-Y9m"/>
                 <constraint firstItem="eGw-vm-ntW" firstAttribute="leading" secondItem="XE8-T0-ON4" secondAttribute="leading" constant="5" id="7wB-0A-gIG"/>
-                <constraint firstItem="fuk-Cp-qcF" firstAttribute="leading" secondItem="eGw-vm-ntW" secondAttribute="trailing" id="Bpb-8I-E5Y"/>
                 <constraint firstItem="XE8-T0-ON4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Fgz-wf-1mw"/>
                 <constraint firstAttribute="bottom" secondItem="gj4-6g-bUX" secondAttribute="bottom" constant="10" id="HRy-Wm-JPi"/>
+                <constraint firstItem="zof-1t-5SA" firstAttribute="bottom" secondItem="XE8-T0-ON4" secondAttribute="bottom" constant="-5" id="OLL-tZ-h1j"/>
                 <constraint firstAttribute="trailing" secondItem="XE8-T0-ON4" secondAttribute="trailing" id="RPW-dB-sw0"/>
                 <constraint firstItem="bgd-Jl-JEk" firstAttribute="leading" secondItem="gj4-6g-bUX" secondAttribute="trailing" constant="5" id="RYe-eB-LhR"/>
                 <constraint firstItem="gj4-6g-bUX" firstAttribute="top" secondItem="XE8-T0-ON4" secondAttribute="bottom" constant="5" id="ThI-0o-odY"/>
                 <constraint firstItem="gj4-6g-bUX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WNN-Ux-DIo"/>
-                <constraint firstItem="fuk-Cp-qcF" firstAttribute="bottom" secondItem="XE8-T0-ON4" secondAttribute="bottom" constant="-5" id="asX-q8-97U"/>
                 <constraint firstItem="bgd-Jl-JEk" firstAttribute="centerY" secondItem="gj4-6g-bUX" secondAttribute="centerY" id="gSY-LA-pyv"/>
                 <constraint firstItem="XE8-T0-ON4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="grC-sU-pbu"/>
-                <constraint firstItem="fuk-Cp-qcF" firstAttribute="trailing" secondItem="XE8-T0-ON4" secondAttribute="trailing" constant="-5" id="yzj-pz-T2a"/>
+                <constraint firstAttribute="trailing" secondItem="zof-1t-5SA" secondAttribute="trailing" constant="5" id="hk5-CB-aj6"/>
+                <constraint firstItem="h4w-jK-Rp8" firstAttribute="centerY" secondItem="zof-1t-5SA" secondAttribute="centerY" id="mHd-Te-SyO"/>
+                <constraint firstItem="h4w-jK-Rp8" firstAttribute="leading" secondItem="eGw-vm-ntW" secondAttribute="trailing" constant="10" id="mNU-xM-Oaw"/>
+                <constraint firstItem="zof-1t-5SA" firstAttribute="leading" secondItem="h4w-jK-Rp8" secondAttribute="trailing" id="mdj-Dm-VPW"/>
             </constraints>
             <size key="customSize" width="299" height="139"/>
             <connections>
                 <outlet property="iconImg" destination="XE8-T0-ON4" id="XJU-KU-apk"/>
                 <outlet property="nickNameLab" destination="eGw-vm-ntW" id="8y9-If-j5P"/>
-                <outlet property="onlineBtn" destination="fuk-Cp-qcF" id="Sgj-2A-CCX"/>
+                <outlet property="onlineLab" destination="zof-1t-5SA" id="Lzm-g1-zrm"/>
                 <outlet property="titLab" destination="bgd-Jl-JEk" id="a5n-P4-c1a"/>
             </connections>
             <point key="canvasLocation" x="38.5" y="-64.5"/>

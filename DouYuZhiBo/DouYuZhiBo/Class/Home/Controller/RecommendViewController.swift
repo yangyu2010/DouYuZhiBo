@@ -20,9 +20,10 @@ fileprivate let kRecommendHeaderView = "kRecommendHeaderView"
 
 class RecommendViewController: UIViewController {
 
-    fileprivate lazy var viewModel : RecommendViewModel = RecommendViewModel()
     
     // MARK: -懒加载属性
+    fileprivate lazy var viewModel : RecommendViewModel = RecommendViewModel()
+
     fileprivate lazy var recommendCollec: UICollectionView = {[unowned self] in
         
         let layout = UICollectionViewFlowLayout()
@@ -34,7 +35,6 @@ class RecommendViewController: UIViewController {
         
         let frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - kNavigationH - 40 - kTabBarH)
         let collec = UICollectionView(frame: frame, collectionViewLayout: layout)
-//        collec.showsVerticalScrollIndicator = false
         collec.register(UINib(nibName: "CollectionViewNomalCell", bundle: nil), forCellWithReuseIdentifier: kRecommendNormalCellID)
         collec.register(UINib(nibName: "CollectionViewPrettyCell", bundle: nil), forCellWithReuseIdentifier: kRecommendPrettyCellID)
         collec.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kRecommendHeaderView)
@@ -44,6 +44,7 @@ class RecommendViewController: UIViewController {
         collec.delegate = self
         return collec
     }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,20 +97,14 @@ extension RecommendViewController : UICollectionViewDataSource, UICollectionView
         let list = viewModel.room_list[indexPath.section]
         let room = list.rooms[indexPath.item]
         
+        var cell : CollectionViewBaseCell
         if indexPath.section == 1 {
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRecommendPrettyCellID, for: indexPath) as! CollectionViewPrettyCell
-            cell.room  = room
-            return cell
-            
+             cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRecommendPrettyCellID, for: indexPath) as! CollectionViewPrettyCell
         } else {
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRecommendNormalCellID, for: indexPath) as! CollectionViewNomalCell
-            cell.room  = room
-
-            return cell
+             cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRecommendNormalCellID, for: indexPath) as! CollectionViewNomalCell
         }
-
+        cell.room  = room
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

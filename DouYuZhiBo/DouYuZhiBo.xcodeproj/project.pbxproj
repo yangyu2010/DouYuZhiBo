@@ -24,6 +24,7 @@
 		8683C4C41E543A8E0041FE0E /* YYContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683C4C31E543A8E0041FE0E /* YYContentView.swift */; };
 		8683C4C61E544A550041FE0E /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683C4C51E544A550041FE0E /* UIColor-Extension.swift */; };
 		8683C4C81E558F2D0041FE0E /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683C4C71E558F2D0041FE0E /* RecommendViewController.swift */; };
+		86A7D17F1E5BE9B700789391 /* CollectionViewBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A7D17E1E5BE9B700789391 /* CollectionViewBaseCell.swift */; };
 		86AE1DDD1E56E42A00B95281 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE1DDB1E56E42A00B95281 /* CollectionHeaderView.swift */; };
 		86AE1DDE1E56E42A00B95281 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86AE1DDC1E56E42A00B95281 /* CollectionHeaderView.xib */; };
 		86AE1DE11E56E7DC00B95281 /* CollectionViewNomalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE1DDF1E56E7DC00B95281 /* CollectionViewNomalCell.swift */; };
@@ -57,6 +58,7 @@
 		8683C4C31E543A8E0041FE0E /* YYContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYContentView.swift; sourceTree = "<group>"; };
 		8683C4C51E544A550041FE0E /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		8683C4C71E558F2D0041FE0E /* RecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		86A7D17E1E5BE9B700789391 /* CollectionViewBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBaseCell.swift; sourceTree = "<group>"; };
 		86AE1DDB1E56E42A00B95281 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
 		86AE1DDC1E56E42A00B95281 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
 		86AE1DDF1E56E7DC00B95281 /* CollectionViewNomalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewNomalCell.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				86AE1DE01E56E7DC00B95281 /* CollectionViewNomalCell.xib */,
 				86AE1DE31E56ECB500B95281 /* CollectionViewPrettyCell.swift */,
 				86AE1DE41E56ECB500B95281 /* CollectionViewPrettyCell.xib */,
+				86A7D17E1E5BE9B700789391 /* CollectionViewBaseCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				8683C4A71E52F5060041FE0E /* MainViewController.swift in Sources */,
 				8683C4BB1E52FED50041FE0E /* UIBarButtonItem-Extension.swift in Sources */,
 				8683C4B81E52F8710041FE0E /* HomeViewController.swift in Sources */,
+				86A7D17F1E5BE9B700789391 /* CollectionViewBaseCell.swift in Sources */,
 				86AE1DE51E56ECB500B95281 /* CollectionViewPrettyCell.swift in Sources */,
 				8683C4C41E543A8E0041FE0E /* YYContentView.swift in Sources */,
 				86AE1DED1E5ADF3800B95281 /* NSDate-Extension.swift in Sources */,

@@ -8,33 +8,19 @@
 
 import UIKit
 
-class CollectionViewPrettyCell: UICollectionViewCell {
+class CollectionViewPrettyCell: CollectionViewBaseCell {
 
     @IBOutlet weak var cityBtn: UIButton!
-    @IBOutlet weak var nickNameLab: UILabel!
-    @IBOutlet weak var iconImg: UIImageView!
-    @IBOutlet weak var onlineBtn: UIButton!
+   
     
-    
-    var room : RoomModel? {
+    override var room : RoomModel? {
         didSet {
-            guard let room = room else { return  }
             
-            nickNameLab.text = room.nickname
-            if let city = room.anchor_city {
-                cityBtn.setTitle(" " + city, for: .normal)
-            }
+            super.room = room
             
-            if let urlString = room.vertical_src ,
-                let url = URL(string: urlString) {
-                iconImg.kf.setImage(with: url)
-            }
+            cityBtn.setTitle(room?.anchor_city, for: .normal)
             
-            if room.online >= 10000 {
-                onlineBtn.setTitle("\(Int(room.online / 10000))万在线", for: .normal)
-            }else {
-                onlineBtn.setTitle("\(room.online)在线", for: .normal)
-            }
         }
     }
+   
 }
