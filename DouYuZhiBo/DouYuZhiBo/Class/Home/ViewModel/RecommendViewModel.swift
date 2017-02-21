@@ -18,12 +18,14 @@ class RecommendViewModel {
     
     /// 这个列表装的是 热门 模块
     fileprivate lazy var hotRoomList : RoomListModel = RoomListModel()
+
 }
 
 
 // MARK: -发送网络请求
 extension RecommendViewModel {
 
+    // 请求推荐下数据
     func loadData(completion : @escaping () -> ()) {
         
         // 1.先定义需要的参数
@@ -116,6 +118,33 @@ extension RecommendViewModel {
             self.room_list.insert(self.prettyRoomList, at: 0)
             self.room_list.insert(self.hotRoomList, at: 0)
             completion()
+        }
+    }
+    
+
+    // 请求广告数据
+    func loadRecycleViewData(completion : @escaping (_ recycleModelArr : [RecycleModel]) -> ()) {
+        
+        NetworkTools.requestData(type: .GET,
+                                 urlString: "http://www.douyutv.com/api/v1/slide/6",
+                                 parameters: ["version" : "2.300"]) {
+                                    (result) in
+            
+                                    // 1.校验转字典
+                                    guard let resultDict = result as? [String : Any] else { return }
+                                    
+                                    // 2.校验取值
+                                    guard let data = resultDict["data"] as? [[String : Any]] else { return }
+                                    
+                                    var recycleModelArr = [RecycleModel]()
+                                    
+                                    // 3.遍历数组 转模型
+                                    for dict in data {
+                                        let model = RecycleModel(dict: dict)
+                                        recycleModelArr.append(model)
+                                    }
+            
+                                    completion(recycleModelArr)
         }
     }
 }

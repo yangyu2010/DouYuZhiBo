@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="4pF-rV-Dji" customClass="RecycleHeaderView" customModule="DouYuZhiBo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="210"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Xl1-6e-lW9">
+                    <rect key="frame" x="0.0" y="0.0" width="417" height="210"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ykS-nb-UEY">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="4pF-rV-Dji" id="5nd-db-z6q"/>
+                    </connections>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLM-if-wh7">
+                    <rect key="frame" x="0.0" y="180" width="417" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武汉直播平台" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuy-Ea-AJN">
+                            <rect key="frame" x="8" y="7" width="80" height="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="k5Z-Re-0lF">
+                            <rect key="frame" x="370" y="-3" width="39" height="37"/>
+                        </pageControl>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="8dX-3C-CgK"/>
+                        <constraint firstItem="Cuy-Ea-AJN" firstAttribute="leading" secondItem="xLM-if-wh7" secondAttribute="leading" constant="8" id="RJU-tc-nhS"/>
+                        <constraint firstAttribute="trailing" secondItem="k5Z-Re-0lF" secondAttribute="trailing" constant="8" id="RiO-HH-ezg"/>
+                        <constraint firstItem="k5Z-Re-0lF" firstAttribute="centerY" secondItem="xLM-if-wh7" secondAttribute="centerY" id="a1b-xX-o1W"/>
+                        <constraint firstItem="Cuy-Ea-AJN" firstAttribute="centerY" secondItem="xLM-if-wh7" secondAttribute="centerY" id="uoq-Tp-uje"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xLM-if-wh7" firstAttribute="leading" secondItem="4pF-rV-Dji" secondAttribute="leading" id="7j3-hg-6WC"/>
+                <constraint firstItem="Xl1-6e-lW9" firstAttribute="top" secondItem="4pF-rV-Dji" secondAttribute="top" id="VUu-xs-AbF"/>
+                <constraint firstAttribute="trailing" secondItem="Xl1-6e-lW9" secondAttribute="trailing" id="ZkO-XT-AFL"/>
+                <constraint firstAttribute="bottom" secondItem="xLM-if-wh7" secondAttribute="bottom" id="dAE-Qh-8dA"/>
+                <constraint firstAttribute="bottom" secondItem="Xl1-6e-lW9" secondAttribute="bottom" id="fzk-7e-dW4"/>
+                <constraint firstAttribute="trailing" secondItem="xLM-if-wh7" secondAttribute="trailing" id="m49-8S-BMx"/>
+                <constraint firstItem="Xl1-6e-lW9" firstAttribute="leading" secondItem="4pF-rV-Dji" secondAttribute="leading" id="ugZ-ff-8sa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="pageController" destination="k5Z-Re-0lF" id="zdS-pi-1g7"/>
+                <outlet property="recycleCollecView" destination="Xl1-6e-lW9" id="kqb-9n-nd1"/>
+                <outlet property="titLab" destination="Cuy-Ea-AJN" id="dVE-db-xkK"/>
+            </connections>
+            <point key="canvasLocation" x="-53" y="-356"/>
+        </view>
+    </objects>
+</document>

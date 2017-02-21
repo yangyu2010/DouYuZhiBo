@@ -14,6 +14,8 @@ fileprivate let kRecommendNormalCellH: CGFloat = kRecommendCellW * 3 / 4.0
 fileprivate let kRecommendPrettyCellH: CGFloat = kRecommendCellW * 4 / 3.0
 fileprivate let kRecommendHeaderViewH: CGFloat = 50
 
+fileprivate let kRecycleViewH = kScreenW * 3 / 8
+
 fileprivate let kRecommendNormalCellID = "kRecommendNormalCellID"
 fileprivate let kRecommendPrettyCellID = "kRecommendPrettyCellID"
 fileprivate let kRecommendHeaderView = "kRecommendHeaderView"
@@ -24,6 +26,7 @@ class RecommendViewController: UIViewController {
     // MARK: -懒加载属性
     fileprivate lazy var viewModel : RecommendViewModel = RecommendViewModel()
 
+    // MARK: -懒加载控件
     fileprivate lazy var recommendCollec: UICollectionView = {[unowned self] in
         
         let layout = UICollectionViewFlowLayout()
@@ -45,6 +48,11 @@ class RecommendViewController: UIViewController {
         return collec
     }()
     
+    fileprivate lazy var recycleView : RecycleHeaderView = {
+        let recycleView = RecycleHeaderView.creatView()
+        recycleView.frame = CGRect(x: 0, y: -kRecycleViewH, width: kScreenW, height: kRecycleViewH)
+        return recycleView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,8 +70,15 @@ class RecommendViewController: UIViewController {
 extension RecommendViewController {
     fileprivate func setupUI() {
         
+        // 1.添加collectionView
         view.addSubview(recommendCollec)
         recommendCollec.dataSource = self
+        
+        // 2.添加头部广告View
+        recommendCollec.addSubview(recycleView)
+        
+        // 3.设置collectionView的内边距
+        recommendCollec.contentInset = UIEdgeInsets(top: kRecycleViewH , left: 0, bottom: 0, right: 0)
     }
 }
 
@@ -73,8 +88,11 @@ extension RecommendViewController {
     func loadData() {
                 
         viewModel.loadData { 
-            
             self.recommendCollec.reloadData()
+        }
+        
+        viewModel.loadRecycleViewData { (recycleModelArr) in
+            self.recycleView.recycleModelArr = recycleModelArr
         }
     }
 }
