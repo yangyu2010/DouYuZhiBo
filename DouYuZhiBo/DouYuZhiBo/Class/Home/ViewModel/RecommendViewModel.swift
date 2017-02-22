@@ -17,7 +17,7 @@ class RecommendViewModel {
     fileprivate lazy var prettyRoomList : RoomListModel = RoomListModel()
     
     /// 这个列表装的是 热门 模块
-    fileprivate lazy var hotRoomList : RoomListModel = RoomListModel()
+    lazy var hotRoomList : RoomListModel = RoomListModel()
 
 }
 

@@ -22,7 +22,8 @@ class CollectionViewBaseCell: UICollectionViewCell {
             
             if let urlString = room.vertical_src ,
                 let url = URL(string: urlString) {
-                iconImg.kf.setImage(with: url)
+//                iconImg.kf.setImage(with: url)
+                iconImg.kf.setImage(with: url, placeholder: UIImage(named: "Img_default"), options: nil, progressBlock: nil, completionHandler: nil)
             }
             
             if room.online >= 10000 {

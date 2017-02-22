@@ -15,6 +15,7 @@ fileprivate let kRecommendPrettyCellH: CGFloat = kRecommendCellW * 4 / 3.0
 fileprivate let kRecommendHeaderViewH: CGFloat = 50
 
 fileprivate let kRecycleViewH = kScreenW * 3 / 8
+fileprivate let kGameViewH : CGFloat = 90
 
 fileprivate let kRecommendNormalCellID = "kRecommendNormalCellID"
 fileprivate let kRecommendPrettyCellID = "kRecommendPrettyCellID"
@@ -22,7 +23,6 @@ fileprivate let kRecommendHeaderView = "kRecommendHeaderView"
 
 class RecommendViewController: UIViewController {
 
-    
     // MARK: -懒加载属性
     fileprivate lazy var viewModel : RecommendViewModel = RecommendViewModel()
 
@@ -50,10 +50,17 @@ class RecommendViewController: UIViewController {
     
     fileprivate lazy var recycleView : RecycleHeaderView = {
         let recycleView = RecycleHeaderView.creatView()
-        recycleView.frame = CGRect(x: 0, y: -kRecycleViewH, width: kScreenW, height: kRecycleViewH)
+        recycleView.frame = CGRect(x: 0, y: -(kRecycleViewH + kGameViewH), width: kScreenW, height: kRecycleViewH)
         return recycleView
     }()
     
+    fileprivate lazy var gameView : RecommendGameView = {
+        let gameView = RecommendGameView.recommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kScreenW, height: kGameViewH)
+        return gameView
+    }()
+    
+    // MARK: -系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -78,7 +85,11 @@ extension RecommendViewController {
         recommendCollec.addSubview(recycleView)
         
         // 3.设置collectionView的内边距
-        recommendCollec.contentInset = UIEdgeInsets(top: kRecycleViewH , left: 0, bottom: 0, right: 0)
+        recommendCollec.contentInset = UIEdgeInsets(top: kRecycleViewH + kGameViewH, left: 0, bottom: 0, right: 0)
+        
+        // 4.添加gameView
+        recommendCollec.addSubview(gameView)
+        
     }
 }
 
@@ -89,6 +100,17 @@ extension RecommendViewController {
                 
         viewModel.loadData { 
             self.recommendCollec.reloadData()
+//            self.gameView.roomList = self.viewModel.room_list
+            
+            
+            var groups = self.viewModel.room_list
+            groups.removeFirst()
+            groups.removeFirst()
+            
+            let list = RoomListModel()
+            list.tag_name = "更多"
+            groups.append(list)
+            self.gameView.roomList = groups
         }
         
         viewModel.loadRecycleViewData { (recycleModelArr) in
