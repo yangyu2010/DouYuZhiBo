@@ -12,9 +12,11 @@ fileprivate let kRecycleCellID = "kRecycleCellID"
 
 class RecycleHeaderView: UIView {
 
+    // MARK: -xib控件
     @IBOutlet weak var recycleCollecView: UICollectionView!
     @IBOutlet weak var pageController: UIPageControl!
     
+    // MARK: -系统回调函数
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -32,20 +34,28 @@ class RecycleHeaderView: UIView {
         layout.itemSize = recycleCollecView.bounds.size
     }
     
+    // MARK: -自定义属性
     var recycleModelArr : [RecycleModel]? {
         didSet {
             guard recycleModelArr != nil else { return }
             
+            // 1.刷新数据
             recycleCollecView.reloadData()
             
+            // 2.设置pageController的总个数
             pageController.numberOfPages = recycleModelArr!.count
             
+            // 3.设置collectionView滚动到中间某个位置
             let path = IndexPath(item: recycleModelArr!.count * 50, section: 0)
             recycleCollecView.scrollToItem(at: path, at: .left, animated: false)
+            
+            // 4.添加定时器
+            addTimer()
         }
     }
     
-    
+    /// 定时器
+    fileprivate var timer : Timer?
     
 }
 
@@ -78,6 +88,14 @@ extension RecycleHeaderView : UICollectionViewDelegate {
 
         pageController.currentPage = count % recycleModelArr!.count
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        stopTimer()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        addTimer()
+    }
 }
 
 // MARK: -提供个类方法创建view
@@ -86,6 +104,27 @@ extension RecycleHeaderView {
     class func creatView() -> RecycleHeaderView {
         
         return Bundle.main.loadNibNamed("RecycleHeaderView", owner: nil, options: nil)?.first as! RecycleHeaderView
+    }
+}
+
+// MARK: -处理timer
+extension RecycleHeaderView {
+
+    fileprivate func addTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.scrollToNext), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .commonModes)
+    }
+    
+    fileprivate func stopTimer() {
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    @objc fileprivate func scrollToNext() {
+        let currentOffsetX = recycleCollecView.contentOffset.x
+        let offset = currentOffsetX + recycleCollecView.bounds.width
+        
+        recycleCollecView.setContentOffset(CGPoint(x: offset, y: 0), animated: true)
     }
 }
 
