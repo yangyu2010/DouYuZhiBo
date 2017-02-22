@@ -21,9 +21,29 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="Kiu-zo-GGK">
                         <rect key="frame" x="0.0" y="0.0" width="338" height="155"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBh-qL-Bc3">
+                        <rect key="frame" x="0.0" y="125" width="338" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="直播吧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCa-jC-eBN">
+                                <rect key="frame" x="8" y="8" width="40" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.50467649647887325" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="AoN-8b-CWl"/>
+                            <constraint firstItem="pCa-jC-eBN" firstAttribute="centerY" secondItem="cBh-qL-Bc3" secondAttribute="centerY" id="B0K-0a-GiQ"/>
+                            <constraint firstItem="pCa-jC-eBN" firstAttribute="leading" secondItem="cBh-qL-Bc3" secondAttribute="leading" constant="8" id="HRJ-Qj-CTt"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="cBh-qL-Bc3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3BC-EI-tFu"/>
+                <constraint firstAttribute="trailing" secondItem="cBh-qL-Bc3" secondAttribute="trailing" id="5cM-iH-iuh"/>
+                <constraint firstAttribute="bottom" secondItem="cBh-qL-Bc3" secondAttribute="bottom" id="BMf-5k-nzV"/>
                 <constraint firstItem="Kiu-zo-GGK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Oym-ev-7g4"/>
                 <constraint firstItem="Kiu-zo-GGK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="b5t-Mo-9Kf"/>
                 <constraint firstAttribute="trailing" secondItem="Kiu-zo-GGK" secondAttribute="trailing" id="lS7-Rz-ApL"/>
@@ -32,6 +52,7 @@
             <size key="customSize" width="338" height="155"/>
             <connections>
                 <outlet property="iconImg" destination="Kiu-zo-GGK" id="xa5-9b-auw"/>
+                <outlet property="titleLab" destination="pCa-jC-eBN" id="sdR-RO-k7i"/>
             </connections>
             <point key="canvasLocation" x="178" y="1.5"/>
         </collectionViewCell>

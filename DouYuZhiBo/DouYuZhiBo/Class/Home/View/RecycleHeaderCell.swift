@@ -12,10 +12,13 @@ import Kingfisher
 class RecycleHeaderCell: UICollectionViewCell {
 
     @IBOutlet weak var iconImg: UIImageView!
+    @IBOutlet weak var titleLab: UILabel!
     
     var model : RecycleModel? {
         didSet {
             guard let model = model else { return }
+            
+            titleLab.text = model.title
             
             if let urlString = model.pic_url ,
                 let url = URL(string: urlString) {

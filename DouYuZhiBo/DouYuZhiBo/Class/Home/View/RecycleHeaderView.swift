@@ -13,7 +13,6 @@ fileprivate let kRecycleCellID = "kRecycleCellID"
 class RecycleHeaderView: UIView {
 
     @IBOutlet weak var recycleCollecView: UICollectionView!
-    @IBOutlet weak var titLab: UILabel!
     @IBOutlet weak var pageController: UIPageControl!
     
     override func awakeFromNib() {
@@ -39,6 +38,7 @@ class RecycleHeaderView: UIView {
             
             recycleCollecView.reloadData()
             
+            pageController.numberOfPages = recycleModelArr!.count
         }
     }
     
@@ -62,6 +62,19 @@ extension RecycleHeaderView : UICollectionViewDataSource {
         return cell
     }
     
+}
+
+// MARK: -代理
+extension RecycleHeaderView : UICollectionViewDelegate {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let offsetX = scrollView.contentOffset.x + scrollView.bounds.width * 0.5
+        
+        let count = Int(offsetX / scrollView.bounds.width)
+        
+        pageController.currentPage = count
+    }
 }
 
 // MARK: -提供个类方法创建view

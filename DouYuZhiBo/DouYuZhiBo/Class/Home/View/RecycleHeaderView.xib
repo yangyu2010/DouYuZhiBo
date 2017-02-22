@@ -26,46 +26,26 @@
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="4pF-rV-Dji" id="5nd-db-z6q"/>
+                        <outlet property="delegate" destination="4pF-rV-Dji" id="gWS-Mh-yql"/>
                     </connections>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLM-if-wh7">
-                    <rect key="frame" x="0.0" y="180" width="417" height="30"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="武汉直播平台" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cuy-Ea-AJN">
-                            <rect key="frame" x="8" y="7" width="80" height="16"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="k5Z-Re-0lF">
-                            <rect key="frame" x="370" y="-3" width="39" height="37"/>
-                        </pageControl>
-                    </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="8dX-3C-CgK"/>
-                        <constraint firstItem="Cuy-Ea-AJN" firstAttribute="leading" secondItem="xLM-if-wh7" secondAttribute="leading" constant="8" id="RJU-tc-nhS"/>
-                        <constraint firstAttribute="trailing" secondItem="k5Z-Re-0lF" secondAttribute="trailing" constant="8" id="RiO-HH-ezg"/>
-                        <constraint firstItem="k5Z-Re-0lF" firstAttribute="centerY" secondItem="xLM-if-wh7" secondAttribute="centerY" id="a1b-xX-o1W"/>
-                        <constraint firstItem="Cuy-Ea-AJN" firstAttribute="centerY" secondItem="xLM-if-wh7" secondAttribute="centerY" id="uoq-Tp-uje"/>
-                    </constraints>
-                </view>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="k5Z-Re-0lF">
+                    <rect key="frame" x="370" y="176" width="39" height="37"/>
+                </pageControl>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="xLM-if-wh7" firstAttribute="leading" secondItem="4pF-rV-Dji" secondAttribute="leading" id="7j3-hg-6WC"/>
+                <constraint firstAttribute="bottom" secondItem="k5Z-Re-0lF" secondAttribute="bottom" constant="-3" id="Sb5-qZ-MWX"/>
                 <constraint firstItem="Xl1-6e-lW9" firstAttribute="top" secondItem="4pF-rV-Dji" secondAttribute="top" id="VUu-xs-AbF"/>
+                <constraint firstAttribute="trailing" secondItem="k5Z-Re-0lF" secondAttribute="trailing" constant="8" id="YEd-gK-d7e"/>
                 <constraint firstAttribute="trailing" secondItem="Xl1-6e-lW9" secondAttribute="trailing" id="ZkO-XT-AFL"/>
-                <constraint firstAttribute="bottom" secondItem="xLM-if-wh7" secondAttribute="bottom" id="dAE-Qh-8dA"/>
                 <constraint firstAttribute="bottom" secondItem="Xl1-6e-lW9" secondAttribute="bottom" id="fzk-7e-dW4"/>
-                <constraint firstAttribute="trailing" secondItem="xLM-if-wh7" secondAttribute="trailing" id="m49-8S-BMx"/>
                 <constraint firstItem="Xl1-6e-lW9" firstAttribute="leading" secondItem="4pF-rV-Dji" secondAttribute="leading" id="ugZ-ff-8sa"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="pageController" destination="k5Z-Re-0lF" id="zdS-pi-1g7"/>
                 <outlet property="recycleCollecView" destination="Xl1-6e-lW9" id="kqb-9n-nd1"/>
-                <outlet property="titLab" destination="Cuy-Ea-AJN" id="dVE-db-xkK"/>
             </connections>
             <point key="canvasLocation" x="-53" y="-356"/>
         </view>
