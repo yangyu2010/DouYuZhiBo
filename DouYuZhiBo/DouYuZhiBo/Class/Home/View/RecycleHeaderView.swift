@@ -39,6 +39,9 @@ class RecycleHeaderView: UIView {
             recycleCollecView.reloadData()
             
             pageController.numberOfPages = recycleModelArr!.count
+            
+            let path = IndexPath(item: recycleModelArr!.count * 50, section: 0)
+            recycleCollecView.scrollToItem(at: path, at: .left, animated: false)
         }
     }
     
@@ -50,14 +53,14 @@ class RecycleHeaderView: UIView {
 extension RecycleHeaderView : UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return recycleModelArr?.count ?? 0
+        return (recycleModelArr?.count ?? 0) * 10000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kRecycleCellID, for: indexPath) as! RecycleHeaderCell
 
-        cell.model = recycleModelArr?[indexPath.item]
+        cell.model = recycleModelArr?[indexPath.item % recycleModelArr!.count]
         
         return cell
     }
@@ -72,8 +75,8 @@ extension RecycleHeaderView : UICollectionViewDelegate {
         let offsetX = scrollView.contentOffset.x + scrollView.bounds.width * 0.5
         
         let count = Int(offsetX / scrollView.bounds.width)
-        
-        pageController.currentPage = count
+
+        pageController.currentPage = count % recycleModelArr!.count
     }
 }
 
