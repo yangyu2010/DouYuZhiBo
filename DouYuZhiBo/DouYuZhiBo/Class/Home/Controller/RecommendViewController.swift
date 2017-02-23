@@ -36,13 +36,12 @@ class RecommendViewController: UIViewController {
         layout.headerReferenceSize = CGSize(width: kScreenW, height: kRecommendHeaderViewH)
         layout.sectionInset = UIEdgeInsets(top: 0, left: kRecommendMarggin, bottom: 0, right: kRecommendMarggin)
         
-        let frame = CGRect(x: 0, y: 0, width: kScreenW, height: kScreenH - kNavigationH - 40 - kTabBarH)
-        let collec = UICollectionView(frame: frame, collectionViewLayout: layout)
+        let collec = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         collec.register(UINib(nibName: "CollectionViewNomalCell", bundle: nil), forCellWithReuseIdentifier: kRecommendNormalCellID)
         collec.register(UINib(nibName: "CollectionViewPrettyCell", bundle: nil), forCellWithReuseIdentifier: kRecommendPrettyCellID)
         collec.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kRecommendHeaderView)
         collec.backgroundColor = UIColor.white
-//        collec.autoresizingMask = [.flexibleHeight, .flexibleWidth, .flexibleBottomMargin]
+        collec.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collec.dataSource = self
         collec.delegate = self
         return collec
@@ -84,12 +83,12 @@ extension RecommendViewController {
         // 2.添加头部广告View
         recommendCollec.addSubview(recycleView)
         
-        // 3.设置collectionView的内边距
-        recommendCollec.contentInset = UIEdgeInsets(top: kRecycleViewH + kGameViewH, left: 0, bottom: 0, right: 0)
-        
-        // 4.添加gameView
+        // 3.添加gameView
         recommendCollec.addSubview(gameView)
         
+        // 4.设置collectionView的内边距
+        recommendCollec.contentInset = UIEdgeInsets(top: kRecycleViewH + kGameViewH, left: 0, bottom: 0, right: 0)
+
     }
 }
 

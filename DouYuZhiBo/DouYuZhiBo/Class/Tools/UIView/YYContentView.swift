@@ -82,6 +82,7 @@ extension YYContentView : UICollectionViewDataSource, UICollectionViewDelegate {
             subView.removeFromSuperview()
         }
         let vc = subVcs[indexPath.item]
+        vc.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(vc.view)
         
         return cell

@@ -11,7 +11,9 @@ import UIKit
 fileprivate let gameViewCellID = "gameViewCellID"
 
 class GameViewController: UIViewController {
-
+    
+    fileprivate lazy var gameVM : GameViewModel = GameViewModel()
+    
     fileprivate lazy var gameCollecView : UICollectionView = {[unowned self] in
         
         let layout = UICollectionViewFlowLayout()
@@ -23,7 +25,8 @@ class GameViewController: UIViewController {
         gameCollecView.backgroundColor = UIColor.white
         gameCollecView.dataSource = self
         gameCollecView.register(UINib(nibName: "CollectionGameViewCell", bundle: nil), forCellWithReuseIdentifier: gameViewCellID)
-        
+        gameCollecView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+
         return gameCollecView
     }()
     
@@ -31,6 +34,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         setupUI()
+        
+        loadData()
+
     }
 
 }
@@ -45,16 +51,26 @@ extension GameViewController {
     }
 }
 
+// MARK: 网络请求
+extension GameViewController {
+    
+    fileprivate func loadData() {
+        gameVM.requestData {
+            self.gameCollecView.reloadData()
+        }
+    }
+}
+
 extension GameViewController : UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 40
+        return gameVM.games.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gameViewCellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gameViewCellID, for: indexPath) as! CollectionGameViewCell
         
-        //cell.backgroundColor = UIColor.randomColor()
+        cell.roomList = gameVM.games[indexPath.item]
         
         return cell
     }

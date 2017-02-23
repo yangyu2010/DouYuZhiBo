@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		862DC04E1E5AEEEA001CF4C2 /* RoomListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862DC04D1E5AEEEA001CF4C2 /* RoomListModel.swift */; };
 		862DC0501E5AEEF3001CF4C2 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862DC04F1E5AEEF3001CF4C2 /* RoomModel.swift */; };
+		867CEFF11E5ECEA6002123A1 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867CEFF01E5ECEA6002123A1 /* GameViewModel.swift */; };
 		8680C5941E5DD4CF00C3FB56 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680C5931E5DD4CF00C3FB56 /* GameViewController.swift */; };
 		8683C4841E52EBB60041FE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683C4831E52EBB60041FE0E /* AppDelegate.swift */; };
 		8683C4891E52EBB60041FE0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8683C4871E52EBB60041FE0E /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 		31DA830FA328E1CA2B0F2730 /* Pods-DouYuZhiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuZhiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouYuZhiBo/Pods-DouYuZhiBo.release.xcconfig"; sourceTree = "<group>"; };
 		862DC04D1E5AEEEA001CF4C2 /* RoomListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListModel.swift; sourceTree = "<group>"; };
 		862DC04F1E5AEEF3001CF4C2 /* RoomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
+		867CEFF01E5ECEA6002123A1 /* GameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		8680C5931E5DD4CF00C3FB56 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8683C4801E52EBB60041FE0E /* DouYuZhiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYuZhiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8683C4831E52EBB60041FE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				86AE1DEA1E5AB9A900B95281 /* RecommendViewModel.swift */,
+				867CEFF01E5ECEA6002123A1 /* GameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				862DC04E1E5AEEEA001CF4C2 /* RoomListModel.swift in Sources */,
 				8683C4841E52EBB60041FE0E /* AppDelegate.swift in Sources */,
 				86AE1DDD1E56E42A00B95281 /* CollectionHeaderView.swift in Sources */,
+				867CEFF11E5ECEA6002123A1 /* GameViewModel.swift in Sources */,
 				86AE1DE11E56E7DC00B95281 /* CollectionViewNomalCell.swift in Sources */,
 				8680C5941E5DD4CF00C3FB56 /* GameViewController.swift in Sources */,
 				8683C4C61E544A550041FE0E /* UIColor-Extension.swift in Sources */,
