@@ -25,7 +25,9 @@ class HomeViewController: UIViewController {
         var subVcs = [UIViewController]()
         let firstVC = RecommendViewController()
         subVcs.append(firstVC)
-        for _ in 0..<3 {
+        let secVC = GameViewController()
+        subVcs.append(secVC)
+        for _ in 0..<2 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.randomColor()
             subVcs.append(vc)
@@ -48,6 +50,8 @@ extension HomeViewController {
 
     fileprivate func setupUI() {
     
+        
+        
         // 0.设置nav不影响scroll 不然加的Label看不到
         automaticallyAdjustsScrollViewInsets = false
         

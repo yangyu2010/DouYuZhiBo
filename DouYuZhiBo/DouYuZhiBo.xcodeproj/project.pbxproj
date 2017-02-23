@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		862DC04E1E5AEEEA001CF4C2 /* RoomListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862DC04D1E5AEEEA001CF4C2 /* RoomListModel.swift */; };
 		862DC0501E5AEEF3001CF4C2 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862DC04F1E5AEEF3001CF4C2 /* RoomModel.swift */; };
+		8680C5941E5DD4CF00C3FB56 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680C5931E5DD4CF00C3FB56 /* GameViewController.swift */; };
 		8683C4841E52EBB60041FE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8683C4831E52EBB60041FE0E /* AppDelegate.swift */; };
 		8683C4891E52EBB60041FE0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8683C4871E52EBB60041FE0E /* Main.storyboard */; };
 		8683C48B1E52EBB60041FE0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8683C48A1E52EBB60041FE0E /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		31DA830FA328E1CA2B0F2730 /* Pods-DouYuZhiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuZhiBo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouYuZhiBo/Pods-DouYuZhiBo.release.xcconfig"; sourceTree = "<group>"; };
 		862DC04D1E5AEEEA001CF4C2 /* RoomListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListModel.swift; sourceTree = "<group>"; };
 		862DC04F1E5AEEF3001CF4C2 /* RoomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
+		8680C5931E5DD4CF00C3FB56 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8683C4801E52EBB60041FE0E /* DouYuZhiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYuZhiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8683C4831E52EBB60041FE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8683C4881E52EBB60041FE0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			children = (
 				8683C4B71E52F8710041FE0E /* HomeViewController.swift */,
 				8683C4C71E558F2D0041FE0E /* RecommendViewController.swift */,
+				8680C5931E5DD4CF00C3FB56 /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				8683C4841E52EBB60041FE0E /* AppDelegate.swift in Sources */,
 				86AE1DDD1E56E42A00B95281 /* CollectionHeaderView.swift in Sources */,
 				86AE1DE11E56E7DC00B95281 /* CollectionViewNomalCell.swift in Sources */,
+				8680C5941E5DD4CF00C3FB56 /* GameViewController.swift in Sources */,
 				8683C4C61E544A550041FE0E /* UIColor-Extension.swift in Sources */,
 				8683C4C81E558F2D0041FE0E /* RecommendViewController.swift in Sources */,
 				8683C4A71E52F5060041FE0E /* MainViewController.swift in Sources */,
@@ -652,6 +656,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A63037644C3A5D58F3AC4045 /* Pods-DouYuZhiBo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 35B58NE53U;
@@ -669,6 +674,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 31DA830FA328E1CA2B0F2730 /* Pods-DouYuZhiBo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 35B58NE53U;

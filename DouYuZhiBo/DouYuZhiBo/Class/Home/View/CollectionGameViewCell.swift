@@ -21,18 +21,11 @@ class CollectionGameViewCell: UICollectionViewCell {
             
             if let urlString = roomList.icon_url ,
                 let url = URL(string: urlString) {
-                iconImg.kf.setImage(with: url, placeholder: UIImage(named: "live_cell_default_phone"), options: nil, progressBlock: nil, completionHandler: nil)
+                iconImg.kf.setImage(with: url, placeholder: UIImage(named: "live_cell_default_phone"))
             }else {
                 iconImg.image = UIImage(named: "home_more_btn")
             }
         }
-    }
-    
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
     }
 
 }

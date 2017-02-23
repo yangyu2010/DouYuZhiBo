@@ -5,6 +5,11 @@
 //  Created by Young on 2017/2/15.
 //  Copyright © 2017年 YuYang. All rights reserved.
 //
+// http://capi.douyucdn.cn/api/v1/getColumnDetail?shortName=game
+// 
+// http://capi.douyucdn.cn/api/v1/getHotRoom/2
+
+// http://capi.douyucdn.cn/api/v1/getColumnRoom/3?limit=30&offset=0
 
 import UIKit
 
