@@ -10,6 +10,7 @@ import UIKit
 
 fileprivate let kGameViewHeaderH : CGFloat = 50
 fileprivate let kHotGameViewH : CGFloat = 90
+fileprivate let kGameViewMarggin : CGFloat = 12
 
 fileprivate let kGameViewCellID = "gameViewCellID"
 fileprivate let kGameViewHeaderViewID = "gameViewHeaderViewID"
@@ -25,6 +26,7 @@ class GameViewController: UIViewController {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.headerReferenceSize = CGSize(width: kScreenW, height: kGameViewHeaderH)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: kGameViewMarggin, bottom: 0, right: kGameViewMarggin)
         
         let gameCollecView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
         gameCollecView.backgroundColor = UIColor.white
@@ -32,7 +34,6 @@ class GameViewController: UIViewController {
         gameCollecView.register(UINib(nibName: "CollectionGameViewCell", bundle: nil), forCellWithReuseIdentifier: kGameViewCellID)
         gameCollecView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         gameCollecView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kGameViewHeaderViewID)
-        
         return gameCollecView
     }()
     
@@ -57,6 +58,7 @@ class GameViewController: UIViewController {
         setupUI()
         
         loadData()
+        
         
     }
 

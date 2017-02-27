@@ -29,7 +29,7 @@ class BaseRoomViewModel {
                 let roomGroup = RoomListModel(dict: roomGroup)
                 
                 //201 是颜值模块 不需要这个模块 屏蔽
-                //if roomGroup.tag_id == 201 { continue }
+                if roomGroup.tag_id == 201 { continue }
                 
                 self.room_list.append(roomGroup)
                 

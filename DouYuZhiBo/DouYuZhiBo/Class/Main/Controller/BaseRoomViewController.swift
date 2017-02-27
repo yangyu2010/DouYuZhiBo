@@ -9,13 +9,14 @@
 import UIKit
 
 fileprivate let kRecommendMarggin: CGFloat = 10
-fileprivate let kRecommendCellW: CGFloat = (kScreenW - 3 * kRecommendMarggin) / 2
-fileprivate let kRecommendNormalCellH: CGFloat = kRecommendCellW * 3 / 4.0
-fileprivate let kRecommendPrettyCellH: CGFloat = kRecommendCellW * 4 / 3.0
 fileprivate let kRecommendHeaderViewH: CGFloat = 50
 
-fileprivate let kRecommendNormalCellID = "kRecommendNormalCellID"
-fileprivate let kRecommendPrettyCellID = "kRecommendPrettyCellID"
+let kRecommendCellW: CGFloat = (kScreenW - 3 * kRecommendMarggin) / 2
+let kRecommendNormalCellH: CGFloat = kRecommendCellW * 3 / 4.0
+let kRecommendPrettyCellH: CGFloat = kRecommendCellW * 4 / 3.0
+let kRecommendNormalCellID = "kRecommendNormalCellID"
+let kRecommendPrettyCellID = "kRecommendPrettyCellID"
+
 fileprivate let kRecommendHeaderView = "kRecommendHeaderView"
 
 class BaseRoomViewController: UIViewController {
