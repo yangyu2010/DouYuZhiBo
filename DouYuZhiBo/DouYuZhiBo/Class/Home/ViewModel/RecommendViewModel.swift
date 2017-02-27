@@ -8,11 +8,8 @@
 
 import UIKit
 
-class RecommendViewModel {
+class RecommendViewModel : BaseRoomViewModel {
 
-    /// 装载整个模型的数组
-    lazy var room_list : [RoomListModel] = [RoomListModel]()
-    
     /// 这个列表装的是 颜值 模块
     fileprivate lazy var prettyRoomList : RoomListModel = RoomListModel()
     
@@ -88,32 +85,10 @@ extension RecommendViewModel {
         
         group.enter()
         // 推荐最下面的 游戏的 数据
-        NetworkTools.requestData(type: .GET,
-                                 urlString: "http://capi.douyucdn.cn/api/v1/getHotCate",
-                                 parameters: parameters) {
-                                    (result) in
-            
-                                    // 1.校验转字典
-                                    guard let resultDict = result as? [String : Any] else { return }
-            
-                                    // 2.校验取值
-                                    guard let data = resultDict["data"] as? [[String : Any]] else { return }
-            
-                                    // 3.取出值 然后遍历
-                                    for roomGroup in data {
-            
-                                        let roomGroup = RoomListModel(dict: roomGroup)
-                
-                                        // 201 是颜值模块 不需要这个模块 屏蔽
-                                        if roomGroup.tag_id == 201 { continue }
-                
-                                        self.room_list.append(roomGroup)
-                
-                                    }
-            
-                                    group.leave()
-            }
-
+        super.requestData(urlSting: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parameters) {
+            group.leave()
+        }
+        
         group.notify(queue: DispatchQueue.main) { 
             self.room_list.insert(self.prettyRoomList, at: 0)
             self.room_list.insert(self.hotRoomList, at: 0)

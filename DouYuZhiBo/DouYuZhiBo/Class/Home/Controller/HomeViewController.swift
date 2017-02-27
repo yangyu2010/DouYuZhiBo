@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
         subVcs.append(firstVC)
         let secVC = GameViewController()
         subVcs.append(secVC)
+        subVcs.append(AmusementViewController())
         for _ in 0..<2 {
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor.randomColor()

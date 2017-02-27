@@ -45,6 +45,10 @@
 		86AE1DE81E5A917F00B95281 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE1DE71E5A917F00B95281 /* NetworkTools.swift */; };
 		86AE1DEB1E5AB9A900B95281 /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE1DEA1E5AB9A900B95281 /* RecommendViewModel.swift */; };
 		86AE1DED1E5ADF3800B95281 /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AE1DEC1E5ADF3800B95281 /* NSDate-Extension.swift */; };
+		86BD261B1E64050E00D97CFB /* AmusementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD261A1E64050E00D97CFB /* AmusementViewController.swift */; };
+		86BD261D1E64065800D97CFB /* AmusementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD261C1E64065800D97CFB /* AmusementViewModel.swift */; };
+		86BD261F1E640AE300D97CFB /* BaseRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD261E1E640AE300D97CFB /* BaseRoomViewController.swift */; };
+		86BD26211E640B3900D97CFB /* BaseRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD26201E640B3900D97CFB /* BaseRoomViewModel.swift */; };
 		F3EB3BF88BF3C211250FFAE9 /* Pods_DouYuZhiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A1CD2278E3FA9B78FE897D /* Pods_DouYuZhiBo.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +94,10 @@
 		86AE1DE71E5A917F00B95281 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		86AE1DEA1E5AB9A900B95281 /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		86AE1DEC1E5ADF3800B95281 /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
+		86BD261A1E64050E00D97CFB /* AmusementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmusementViewController.swift; sourceTree = "<group>"; };
+		86BD261C1E64065800D97CFB /* AmusementViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmusementViewModel.swift; sourceTree = "<group>"; };
+		86BD261E1E640AE300D97CFB /* BaseRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRoomViewController.swift; sourceTree = "<group>"; };
+		86BD26201E640B3900D97CFB /* BaseRoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRoomViewModel.swift; sourceTree = "<group>"; };
 		A63037644C3A5D58F3AC4045 /* Pods-DouYuZhiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuZhiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouYuZhiBo/Pods-DouYuZhiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		D9A1CD2278E3FA9B78FE897D /* Pods_DouYuZhiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYuZhiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -228,6 +236,7 @@
 		8683C4A81E52F8340041FE0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				86BD261E1E640AE300D97CFB /* BaseRoomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,6 +246,7 @@
 			children = (
 				862DC04D1E5AEEEA001CF4C2 /* RoomListModel.swift */,
 				862DC04F1E5AEEF3001CF4C2 /* RoomModel.swift */,
+				86BD26201E640B3900D97CFB /* BaseRoomViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,6 +269,7 @@
 				8683C4B71E52F8710041FE0E /* HomeViewController.swift */,
 				8683C4C71E558F2D0041FE0E /* RecommendViewController.swift */,
 				8680C5931E5DD4CF00C3FB56 /* GameViewController.swift */,
+				86BD261A1E64050E00D97CFB /* AmusementViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -375,6 +386,7 @@
 			children = (
 				86AE1DEA1E5AB9A900B95281 /* RecommendViewModel.swift */,
 				867CEFF01E5ECEA6002123A1 /* GameViewModel.swift */,
+				86BD261C1E64065800D97CFB /* AmusementViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -523,9 +535,11 @@
 			files = (
 				862DC04E1E5AEEEA001CF4C2 /* RoomListModel.swift in Sources */,
 				8683C4841E52EBB60041FE0E /* AppDelegate.swift in Sources */,
+				86BD261D1E64065800D97CFB /* AmusementViewModel.swift in Sources */,
 				86AE1DDD1E56E42A00B95281 /* CollectionHeaderView.swift in Sources */,
 				867CEFF11E5ECEA6002123A1 /* GameViewModel.swift in Sources */,
 				86AE1DE11E56E7DC00B95281 /* CollectionViewNomalCell.swift in Sources */,
+				86BD261F1E640AE300D97CFB /* BaseRoomViewController.swift in Sources */,
 				8680C5941E5DD4CF00C3FB56 /* GameViewController.swift in Sources */,
 				8683C4C61E544A550041FE0E /* UIColor-Extension.swift in Sources */,
 				8683C4C81E558F2D0041FE0E /* RecommendViewController.swift in Sources */,
@@ -541,8 +555,10 @@
 				86A7D1831E5C297500789391 /* RecycleHeaderView.swift in Sources */,
 				86AE1DED1E5ADF3800B95281 /* NSDate-Extension.swift in Sources */,
 				8683C4C21E5408B60041FE0E /* Common.swift in Sources */,
+				86BD26211E640B3900D97CFB /* BaseRoomViewModel.swift in Sources */,
 				86AE1DE81E5A917F00B95281 /* NetworkTools.swift in Sources */,
 				8683C4BE1E54046F0041FE0E /* YYTitleView.swift in Sources */,
+				86BD261B1E64050E00D97CFB /* AmusementViewController.swift in Sources */,
 				86AE1DEB1E5AB9A900B95281 /* RecommendViewModel.swift in Sources */,
 				86A7D1901E5D5E3A00789391 /* CollectionGameViewCell.swift in Sources */,
 				862DC0501E5AEEF3001CF4C2 /* RoomModel.swift in Sources */,
