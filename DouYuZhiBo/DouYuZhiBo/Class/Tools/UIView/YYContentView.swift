@@ -132,9 +132,6 @@ extension YYContentView : UICollectionViewDataSource, UICollectionViewDelegate {
 
         }
 
-        
-//        print("\(progress) \(sourceIndex) \(targetIndex)")
-
         delegate?.yyContentViewScroll(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
         
     }

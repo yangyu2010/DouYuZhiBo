@@ -11,9 +11,9 @@ import Kingfisher
 
 class CollectionHeaderView: UICollectionReusableView {
 
-    
     @IBOutlet weak var iconImg: UIImageView!
     @IBOutlet weak var titLab: UILabel!
+    @IBOutlet weak var moreBtn: UIButton!
     
     var roomList : RoomListModel? {
         didSet {
@@ -27,4 +27,13 @@ class CollectionHeaderView: UICollectionReusableView {
         }
     }
     
+}
+
+// MARK: 提供个类方法创建xib的view
+extension CollectionHeaderView {
+    
+    class func headerView() -> CollectionHeaderView {
+        return Bundle.main.loadNibNamed("CollectionHeaderView", owner: nil, options: nil)?.first as! CollectionHeaderView
+        
+    }
 }

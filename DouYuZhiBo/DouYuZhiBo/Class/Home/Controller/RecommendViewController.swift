@@ -68,7 +68,6 @@ class RecommendViewController: UIViewController {
         loadData()
     }
 
-
 }
 
 
