@@ -49,6 +49,10 @@
 		86BD261D1E64065800D97CFB /* AmusementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD261C1E64065800D97CFB /* AmusementViewModel.swift */; };
 		86BD261F1E640AE300D97CFB /* BaseRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD261E1E640AE300D97CFB /* BaseRoomViewController.swift */; };
 		86BD26211E640B3900D97CFB /* BaseRoomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD26201E640B3900D97CFB /* BaseRoomViewModel.swift */; };
+		86BD26231E651C3700D97CFB /* AmusementHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD26221E651C3700D97CFB /* AmusementHeaderView.swift */; };
+		86BD26251E651C4200D97CFB /* AmusementHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86BD26241E651C4200D97CFB /* AmusementHeaderView.xib */; };
+		86BD26281E65229B00D97CFB /* AmusementHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BD26261E65229B00D97CFB /* AmusementHeaderCell.swift */; };
+		86BD26291E65229B00D97CFB /* AmusementHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86BD26271E65229B00D97CFB /* AmusementHeaderCell.xib */; };
 		F3EB3BF88BF3C211250FFAE9 /* Pods_DouYuZhiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9A1CD2278E3FA9B78FE897D /* Pods_DouYuZhiBo.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +102,10 @@
 		86BD261C1E64065800D97CFB /* AmusementViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmusementViewModel.swift; sourceTree = "<group>"; };
 		86BD261E1E640AE300D97CFB /* BaseRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRoomViewController.swift; sourceTree = "<group>"; };
 		86BD26201E640B3900D97CFB /* BaseRoomViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRoomViewModel.swift; sourceTree = "<group>"; };
+		86BD26221E651C3700D97CFB /* AmusementHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmusementHeaderView.swift; sourceTree = "<group>"; };
+		86BD26241E651C4200D97CFB /* AmusementHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmusementHeaderView.xib; sourceTree = "<group>"; };
+		86BD26261E65229B00D97CFB /* AmusementHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmusementHeaderCell.swift; sourceTree = "<group>"; };
+		86BD26271E65229B00D97CFB /* AmusementHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AmusementHeaderCell.xib; sourceTree = "<group>"; };
 		A63037644C3A5D58F3AC4045 /* Pods-DouYuZhiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuZhiBo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouYuZhiBo/Pods-DouYuZhiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		D9A1CD2278E3FA9B78FE897D /* Pods_DouYuZhiBo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYuZhiBo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -295,6 +303,10 @@
 				86A7D18C1E5D3CC400789391 /* RecommendGameView.xib */,
 				86A7D18E1E5D5E3A00789391 /* CollectionGameViewCell.swift */,
 				86A7D18F1E5D5E3A00789391 /* CollectionGameViewCell.xib */,
+				86BD26221E651C3700D97CFB /* AmusementHeaderView.swift */,
+				86BD26241E651C4200D97CFB /* AmusementHeaderView.xib */,
+				86BD26261E65229B00D97CFB /* AmusementHeaderCell.swift */,
+				86BD26271E65229B00D97CFB /* AmusementHeaderCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -472,7 +484,9 @@
 				86AE1DDE1E56E42A00B95281 /* CollectionHeaderView.xib in Resources */,
 				8683C48B1E52EBB60041FE0E /* Assets.xcassets in Resources */,
 				8683C4A11E52F3C20041FE0E /* Live.storyboard in Resources */,
+				86BD26291E65229B00D97CFB /* AmusementHeaderCell.xib in Resources */,
 				86A7D1911E5D5E3A00789391 /* CollectionGameViewCell.xib in Resources */,
+				86BD26251E651C4200D97CFB /* AmusementHeaderView.xib in Resources */,
 				86A7D1891E5C412C00789391 /* RecycleHeaderCell.xib in Resources */,
 				8683C4891E52EBB60041FE0E /* Main.storyboard in Resources */,
 			);
@@ -533,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86BD26281E65229B00D97CFB /* AmusementHeaderCell.swift in Sources */,
 				862DC04E1E5AEEEA001CF4C2 /* RoomListModel.swift in Sources */,
 				8683C4841E52EBB60041FE0E /* AppDelegate.swift in Sources */,
 				86BD261D1E64065800D97CFB /* AmusementViewModel.swift in Sources */,
@@ -558,6 +573,7 @@
 				86BD26211E640B3900D97CFB /* BaseRoomViewModel.swift in Sources */,
 				86AE1DE81E5A917F00B95281 /* NetworkTools.swift in Sources */,
 				8683C4BE1E54046F0041FE0E /* YYTitleView.swift in Sources */,
+				86BD26231E651C3700D97CFB /* AmusementHeaderView.swift in Sources */,
 				86BD261B1E64050E00D97CFB /* AmusementViewController.swift in Sources */,
 				86AE1DEB1E5AB9A900B95281 /* RecommendViewModel.swift in Sources */,
 				86A7D1901E5D5E3A00789391 /* CollectionGameViewCell.swift in Sources */,
