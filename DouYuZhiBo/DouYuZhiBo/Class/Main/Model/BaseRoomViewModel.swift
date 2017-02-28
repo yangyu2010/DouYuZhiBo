@@ -13,7 +13,7 @@ class BaseRoomViewModel {
     /// 装载整个模型的数组
     lazy var room_list : [RoomListModel] = [RoomListModel]()
     
-    func requestData( urlSting : String, parameters : [String : Any]? ,completion : @escaping () -> ()) {
+    func requestData(isGroup : Bool = true, urlSting : String, parameters : [String : Any]? ,completion : @escaping () -> ()) {
         
         NetworkTools.requestData(type: .GET, urlString: urlSting, parameters: parameters) { (result) in
             
@@ -23,17 +23,34 @@ class BaseRoomViewModel {
             // 2.校验取值
             guard let data = resultDict["data"] as? [[String : Any]] else { return }
             
-            // 3.取出值 然后遍历
-            for roomGroup in data {
+            
+            if isGroup {    //直接是房间列表
+            
+                // 3.取出值 然后遍历
+                for roomGroup in data {
+                    
+                    let roomGroup = RoomListModel(dict: roomGroup)
+                    
+                    //201 是颜值模块 不需要这个模块 屏蔽
+                    if roomGroup.tag_id == 201 { continue }
+                    
+                    self.room_list.append(roomGroup)
+                    
+                }
                 
-                let roomGroup = RoomListModel(dict: roomGroup)
+            }else {
                 
-                //201 是颜值模块 不需要这个模块 屏蔽
-                if roomGroup.tag_id == 201 { continue }
+                let group = RoomListModel()
                 
-                self.room_list.append(roomGroup)
+                for dict in data {
+                    let room = RoomModel(dict: dict)
+                    group.rooms.append(room)
+                }
                 
+                self.room_list.append(group)
             }
+            
+            
             completion()
             
         }

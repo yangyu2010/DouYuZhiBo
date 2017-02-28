@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
 
     fileprivate lazy var titleView: YYTitleView = {[weak self] in
         let frame = CGRect(x: 0, y: kNavigationH, width: kScreenW, height: TitleViewH)
-        let titleView = YYTitleView(frame: frame, titles: ["推荐","手游","娱乐","游戏"])
+        let titleView = YYTitleView(frame: frame, titles: ["推荐","游戏","娱乐","趣玩"])
         titleView.delegate = self
         return titleView
     }()
@@ -23,16 +23,10 @@ class HomeViewController: UIViewController {
         
         let frame = CGRect(x: 0, y:  kNavigationH + TitleViewH, width: kScreenW, height: kScreenH - kNavigationH - TitleViewH - kTabBarH)
         var subVcs = [UIViewController]()
-        let firstVC = RecommendViewController()
-        subVcs.append(firstVC)
-        let secVC = GameViewController()
-        subVcs.append(secVC)
+        subVcs.append(RecommendViewController())
+        subVcs.append(GameViewController())
         subVcs.append(AmusementViewController())
-        for _ in 0..<2 {
-            let vc = UIViewController()
-            vc.view.backgroundColor = UIColor.randomColor()
-            subVcs.append(vc)
-        }
+        subVcs.append(FunnyViewController())
         let contentView = YYContentView(frame: frame, subVcs: subVcs, parentVc: self)
         contentView.delegate = self
         return contentView
