@@ -72,6 +72,9 @@ extension RecommendViewController {
             list.tag_name = "更多"
             groups.append(list)
             self.gameView.roomList = groups
+            
+            //请求数据完成,调用父类的,取消动画
+            self.loadDataFinished()
         }
         
         recommendViewModel.loadRecycleViewData { (recycleModelArr) in

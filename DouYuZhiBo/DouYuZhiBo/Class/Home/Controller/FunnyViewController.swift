@@ -29,6 +29,9 @@ class FunnyViewController: BaseRoomViewController {
         funnyVM.requestFunnyData {
             
             self.baseCollec.reloadData()
+            
+            //请求数据完成,调用父类的,取消动画
+            self.loadDataFinished()
         }
     }
 }

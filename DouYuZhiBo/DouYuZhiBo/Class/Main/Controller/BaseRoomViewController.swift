@@ -19,7 +19,7 @@ let kRecommendPrettyCellID = "kRecommendPrettyCellID"
 
 fileprivate let kRecommendHeaderView = "kRecommendHeaderView"
 
-class BaseRoomViewController: UIViewController {
+class BaseRoomViewController: BaseViewController {
 
     // MARK: -懒加载属性
     var viewModel : BaseRoomViewModel!
@@ -58,11 +58,16 @@ class BaseRoomViewController: UIViewController {
 // MARK: -设置UI
 extension BaseRoomViewController {
     
-    func setupUI() {
+    override func setupUI() {
         
-        // 1.添加collectionView
+        // 1.设置父类的view
+        baseContentView = baseCollec
+        
+        // 2.添加collectionView
         view.addSubview(baseCollec)
 
+        // 3.调用父类的setupUI
+        super.setupUI()
     }
 }
 

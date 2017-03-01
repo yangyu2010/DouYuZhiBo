@@ -15,7 +15,7 @@ fileprivate let kGameViewMarggin : CGFloat = 12
 fileprivate let kGameViewCellID = "gameViewCellID"
 fileprivate let kGameViewHeaderViewID = "gameViewHeaderViewID"
 
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
     
     fileprivate lazy var gameVM : GameViewModel = GameViewModel()
     
@@ -68,7 +68,7 @@ class GameViewController: UIViewController {
 // MARK:  设置UI相关
 extension GameViewController {
 
-    fileprivate func setupUI() {
+    override func setupUI() {
   
         view.addSubview(gameCollecView)
         
@@ -77,6 +77,12 @@ extension GameViewController {
         gameCollecView.addSubview(hotGameView)
         
         gameCollecView.contentInset = UIEdgeInsets(top: kGameViewHeaderH + kHotGameViewH, left: 0, bottom: 0, right: 0)
+        
+        
+        baseContentView = gameCollecView
+        
+        super.setupUI()
+        
     }
 }
 
@@ -89,6 +95,9 @@ extension GameViewController {
             self.gameCollecView.reloadData()
             
             self.hotGameView.roomList = Array(self.gameVM.games[0..<10])
+            
+            //请求数据完成,调用父类的,取消动画
+            self.loadDataFinished()
         }
     }
 }

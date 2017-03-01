@@ -45,8 +45,6 @@ extension HomeViewController {
 
     fileprivate func setupUI() {
     
-        
-        
         // 0.设置nav不影响scroll 不然加的Label看不到
         automaticallyAdjustsScrollViewInsets = false
         

@@ -68,6 +68,9 @@ extension AmusementViewController {
  
             
             self.headerView.dataArr = arr
+            
+            //请求数据完成,调用父类的,取消动画
+            self.loadDataFinished()
         }
     }
 }
