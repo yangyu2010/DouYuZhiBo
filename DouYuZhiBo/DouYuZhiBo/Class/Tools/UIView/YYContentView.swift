@@ -47,7 +47,7 @@ class YYContentView: UIView {
         
         self.subVcs = subVcs
         self.parentVc = parentVc
-        
+
         setupUI()
     }
     
@@ -61,6 +61,11 @@ class YYContentView: UIView {
 extension YYContentView {
 
     fileprivate func setupUI() {
+        
+        // 把所有的vc加到子控制器里
+        for vc in subVcs {
+            parentVc?.addChildViewController(vc)
+        }
         
         collectionView.frame = self.bounds
         addSubview(collectionView)

@@ -31,7 +31,7 @@
         <!--首页-->
         <scene sceneID="HwT-eT-TSa">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wxT-kS-cqq" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wxT-kS-cqq" customClass="CustomNavViewController" customModule="DouYuZhiBo" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="btn_home_normal" selectedImage="btn_home_selected" id="6zB-MI-E5S"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

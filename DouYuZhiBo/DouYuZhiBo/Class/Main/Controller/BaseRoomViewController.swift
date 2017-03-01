@@ -80,7 +80,7 @@ extension BaseRoomViewController {
 }
 
 
-extension BaseRoomViewController : UICollectionViewDataSource, UICollectionViewDelegate {
+extension BaseRoomViewController : UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return viewModel.room_list.count
@@ -111,3 +111,31 @@ extension BaseRoomViewController : UICollectionViewDataSource, UICollectionViewD
         return headerView
     }
 }
+
+
+
+extension BaseRoomViewController : UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let list = viewModel.room_list[indexPath.section]
+        let room = list.rooms[indexPath.item]
+        
+        room.isVertical == 0 ? pushNormalRoomVC() : presentShowRoomVC()
+        
+    }
+    
+    fileprivate func presentShowRoomVC() {
+        let room = RoomShowViewController()
+        present(room, animated: true, completion: nil)
+    }
+    
+    fileprivate func pushNormalRoomVC() {
+        let room = RoomNormalViewController()
+        navigationController?.pushViewController(room, animated: true)
+    }
+}
+
+
+
+

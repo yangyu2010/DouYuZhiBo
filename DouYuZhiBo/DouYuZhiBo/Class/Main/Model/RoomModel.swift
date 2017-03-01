@@ -28,6 +28,9 @@ class RoomModel: NSObject {
     /// 主播的城市
     var anchor_city : String?
     
+    /// 1 手机直播  0 电脑直播
+    var isVertical : Int = 0
+    
     init(dict : [String : Any]) {
         
         super.init()
